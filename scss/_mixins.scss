@@ -1,0 +1,25 @@
+@use './variaveis';
+
+@mixin centralizar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin botao-base($cor, $cor-hover) {
+  background-color: $cor;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: variaveis.$raio-borda;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.2s;
+
+  &:hover {
+    background-color: $cor-hover;
+    transform: translateY(-2px);
+  }
+}

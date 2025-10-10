@@ -1,0 +1,22 @@
+@use './variaveis';
+@use './mixins';
+
+/* Botões */ 
+
+.btn {
+  @include mixins.botao-base(variaveis.$cor-primaria, variaveis.$cor-secundaria);
+}
+
+/* Cards */
+
+.card {
+  background-color: #fff;
+  border-radius: variaveis.$raio-borda;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: variaveis.$espacamento;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}

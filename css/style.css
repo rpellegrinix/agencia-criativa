@@ -1,21 +1,60 @@
-/* CSS Reset */
+@charset "UTF-8";
+/* Css Reset e estilos base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 body {
   background-color: aliceblue;
   color: #333;
   line-height: 1.6;
-  font-family: Arial, Helvetica, sans-serif;
-
+  font-family: "Arial", Helvetica, sans-serif;
 }
 
-/* Botões */
+a {
+  color: #4a90e2;
+  text-decoration: underline;
+}
 
+a:hover {
+  text-decoration: underline;
+}
+
+/* Layout geral da página (Header, Home, Sobre, Serviços, Contato, Footer) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: aliceblue;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header__logo {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.header__list {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header__list {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+}
+/* Botões */
 .btn {
   background-color: #4a90e2;
   color: #fff;
@@ -28,63 +67,16 @@ body {
   display: inline-block;
   transition: background-color 0.3s, transform 0.2s;
 }
-
 .btn:hover {
   background-color: #357ab8;
   transform: translateY(-2px);
-}  
-
-/* Header */
-
-a {
-  color: #0775f3;
-  text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  background-color: aliceblue;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.header__logo {
-  font-size: 1.8rem;
-  color: #333;
-  
-}
-
-.header__list {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-}
-
-/* Responsividade Header */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .header__list {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-  }
-}
-
-/* Classe pra estilos padronizados */
-
+/* Cards */
 .card {
   background-color: #fff;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   transition: transform 0.3s;
 }
@@ -92,10 +84,6 @@ a:hover {
 .card:hover {
   transform: translateY(-5px);
 }
-
-
-
-/* Home */
 
 .home {
   display: flex;
@@ -105,60 +93,66 @@ a:hover {
   text-align: center;
   height: 90vh;
   background-color: #eaf0f6;
-  padding: 2rem;
+  padding: 1.5rem;
 }
-
 .home__title {
   font-size: 2.5rem;
-  color: #555;
-  margin-bottom: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
 }
-
 .home__text {
   font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 2rem;
+  color: #333;
+  margin-bottom: 2.25rem;
   max-width: 700px;
 }
-
-/* Responsividade Home */
+.home__btn {
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.home__btn:hover {
+  background-color: #357ab8;
+  transform: translateY(-2px);
+}
+.home__btn {
+  padding: 0.8rem 1.5rem;
+}
 
 @media (max-width: 768px) {
   .home__title {
     font-size: 2rem;
   }
-
   .home__text {
     font-size: 1rem;
   }
-
   .home__btn {
     padding: 0.7rem 1.5rem;
   }
 }
-
-/* Sobre */
-
 .sobre {
-  padding: 4rem 2rem;
+  padding: 3.75rem;
   background-color: #f9f9f9;
   color: #333;
 }
-
 .sobre__title {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-
 .sobre__text {
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
 }
-
-/* Responsividade Sobre */
 
 @media (max-width: 768px) {
   .sobre__title {
@@ -168,63 +162,48 @@ a:hover {
     font-size: 1rem;
   }
 }
-
-/* Serviços */
-
 .servicos {
   padding: 4rem 2rem;
-  background-color: #fff;
+  background-color: aliceblue;
   color: #333;
   text-align: center;
 }
-
 .servicos__title {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-
 .servicos__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 0;
   list-style: none;
 }
-
-/* Responsividade Serviços */
 
 @media (max-width: 768px) {
   .servicos__title {
     font-size: 1.8rem;
   }
-
   .card {
     font-size: 1rem;
-    padding: 1.5rem 1rem; /* Ajuste se quiser espaçamento menor */
+    padding: 1.5rem;
   }
 }
-
-/* Depoimentos */
-
 .depoimentos {
   padding: 4rem 2rem;
   background-color: #f9fafc;
   text-align: center;
 }
-
 .depoimentos__title {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-
 .depoimentos__list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
 }
-
-/* Cada depoimento (card) */
 .depoimentos__item {
   max-width: 600px;
   font-style: italic;
@@ -233,30 +212,24 @@ a:hover {
   text-align: center;
 }
 
-/* Responsividade Depoimentos */
 @media (max-width: 768px) {
   .depoimentos__title {
     font-size: 1.8rem;
   }
-
   .depoimentos__item {
     font-size: 1rem;
-    padding: 1rem; 
+    padding: 1.5rem;
   }
 }
-
-/* Contato */
 .contato {
   padding: 4rem 2rem;
   text-align: center;
 }
-
 .contato__title {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-
 .contato__info {
   text-align: center;
   font-size: 1.1rem;
@@ -264,54 +237,41 @@ a:hover {
   color: #444;
   margin-bottom: 1.5rem;
 }
-
-/* Formulário */
 .contato__form {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin-top: 2rem;
 }
-
-/* Labels */
 .contato__label {
   font-weight: bold;
   margin-bottom: 0.3rem;
   display: block;
 }
-
-/* Inputs e textarea */
-.contato__input,
-.contato__textarea {
+.contato__input, .contato__textarea {
   width: 100%;
   padding: 0.8rem;
   border: 1px solid #ccc;
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   font-size: 1rem;
   font-family: inherit;
   resize: none;
   transition: border 0.3s;
 }
-
-.contato__input:focus,
-.contato__textarea:focus {
+.contato__input:focus, .contato__textarea:focus {
   border-color: #4a90e2;
   outline: none;
 }
 
-/* Responsividade Contato */
 @media (max-width: 768px) {
   .contato__title {
     font-size: 1.6rem;
   }
-
   .contato__info {
     font-size: 1rem;
   }
 }
-
 footer {
   background-color: #333;
   color: #fff;
@@ -320,3 +280,5 @@ footer {
   font-size: 0.9rem;
   margin-top: 3rem;
 }
+
+/*# sourceMappingURL=style.css.map */

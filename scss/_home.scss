@@ -1,0 +1,46 @@
+@use './variaveis';
+@use './mixins';
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 90vh;
+  background-color: #eaf0f6;
+  padding: variaveis.$espacamento;
+
+  &__title {
+    font-size: 2.5rem;
+    color: variaveis.$cor-texto;
+    margin-bottom: variaveis.$espacamento;
+  }
+
+  &__text {
+    font-size: 1.2rem;
+    color: variaveis.$cor-texto;
+    margin-bottom: variaveis.$espacamento * 1.5;
+    max-width: 700px;
+  }
+
+  &__btn {
+    @include mixins.botao-base(variaveis.$cor-primaria, variaveis.$cor-secundaria);
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+// Responsividade
+@media (max-width: variaveis.$tablet) {
+  .home__title {
+    font-size: 2rem;
+  }
+
+  .home__text {
+    font-size: 1rem;
+  }
+
+  .home__btn {
+    padding: 0.7rem 1.5rem;
+  }
+}

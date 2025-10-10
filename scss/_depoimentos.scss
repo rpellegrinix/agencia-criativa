@@ -1,0 +1,40 @@
+@use './variaveis';
+@use './componentes';
+
+.depoimentos {
+  padding: 4rem 2rem;
+  background-color: #f9fafc;
+  text-align: center;
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: variaveis.$espacamento;
+    align-items: center;
+  }
+
+  &__item {
+    max-width: 600px;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+// Responsividade
+@media (max-width: variaveis.$tablet) {
+  .depoimentos__title {
+    font-size: 1.8rem;
+  }
+
+  .depoimentos__item {
+    font-size: 1rem;
+    padding: variaveis.$espacamento;
+  }
+}

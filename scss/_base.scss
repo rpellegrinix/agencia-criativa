@@ -1,0 +1,25 @@
+@use './variaveis';
+
+/* Css Reset e estilos base */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: variaveis.$cor-fundo;
+  color: variaveis.$cor-texto;
+  line-height: 1.6;
+  font-family: variaveis.$fonte-principal;
+}
+
+a {
+  color: variaveis.$cor-primaria;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
